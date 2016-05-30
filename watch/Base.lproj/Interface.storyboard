@@ -14,17 +14,21 @@
                             <items>
                                 <group width="100" height="100" alignment="left" radius="0.0" spacing="0.0" id="lx7-4g-t9B">
                                     <items>
-                                        <group width="100" height="100" alignment="left" verticalAlignment="center" id="XVa-pp-Szk">
+                                        <group width="100" alignment="left" id="Mqj-aK-cNk">
+                                            <variation key="device=watch42mm" width="16"/>
+                                        </group>
+                                        <group width="100" height="100" alignment="left" verticalAlignment="center" radius="0.0" spacing="2" id="XVa-pp-Szk">
                                             <items>
-                                                <imageView width="40" height="40" alignment="right" verticalAlignment="center" image="homeicon.png" id="oXM-Pp-RJX"/>
+                                                <imageView width="40" height="40" alignment="left" verticalAlignment="center" image="homeicon.png" id="oXM-Pp-RJX"/>
                                             </items>
                                             <color key="backgroundColor" red="0.11459555464575655" green="0.45320104231546821" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                             <variation key="default">
                                                 <mask key="items">
                                                     <exclude reference="oXM-Pp-RJX"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="device=watch42mm" height="40" width="156">
+                                            <variation key="device=watch42mm" height="44" width="156">
                                                 <mask key="items">
                                                     <include reference="oXM-Pp-RJX"/>
                                                 </mask>
@@ -35,46 +39,41 @@
                                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                     <variation key="default">
                                         <mask key="items">
+                                            <exclude reference="Mqj-aK-cNk"/>
                                             <exclude reference="XVa-pp-Szk"/>
                                         </mask>
                                     </variation>
                                     <variation key="device=watch42mm" height="40" width="156">
                                         <mask key="items">
+                                            <include reference="Mqj-aK-cNk"/>
                                             <include reference="XVa-pp-Szk"/>
                                         </mask>
                                     </variation>
                                 </group>
                                 <group width="100" height="100" alignment="left" spacing="0.0" id="fH9-Sz-2MU">
                                     <items>
-                                        <group width="100" alignment="left" id="DUo-6b-i2o">
-                                            <variation key="device=watch42mm" width="76"/>
-                                        </group>
-                                        <separator alignment="center" verticalAlignment="center" id="usA-Nt-70B"/>
-                                        <group width="100" alignment="right" id="Cy0-5e-oUD">
-                                            <variation key="device=watch42mm" width="76"/>
+                                        <group width="100" height="1" alignment="center" verticalAlignment="center" id="Cy0-5e-oUD">
+                                            <color key="backgroundColor" red="1" green="0.9489566231142802" blue="0.99909756526044236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <variation key="device=watch42mm" width="2"/>
                                         </group>
                                     </items>
                                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                     <variation key="default">
                                         <mask key="items">
-                                            <exclude reference="DUo-6b-i2o"/>
-                                            <exclude reference="usA-Nt-70B"/>
                                             <exclude reference="Cy0-5e-oUD"/>
                                         </mask>
                                     </variation>
-                                    <variation key="device=watch42mm" height="40" width="156">
+                                    <variation key="device=watch42mm" height="30" width="156">
                                         <mask key="items">
-                                            <include reference="DUo-6b-i2o"/>
-                                            <include reference="usA-Nt-70B"/>
                                             <include reference="Cy0-5e-oUD"/>
                                         </mask>
                                     </variation>
                                 </group>
                                 <group width="100" height="100" alignment="right" radius="0.0" spacing="0.0" id="0eB-Ia-gdg">
                                     <items>
-                                        <group width="100" height="100" alignment="right" verticalAlignment="center" id="Dm9-hd-TIF">
+                                        <group width="100" height="100" alignment="right" verticalAlignment="center" radius="0.0" id="Dm9-hd-TIF">
                                             <items>
-                                                <imageView width="40" height="40" alignment="left" verticalAlignment="center" image="workicon.png" id="ATb-Dy-35b"/>
+                                                <imageView width="40" height="40" alignment="right" verticalAlignment="center" image="workicon.png" id="ATb-Dy-35b"/>
                                             </items>
                                             <color key="backgroundColor" red="0.22678824220397129" green="0.61551047120418856" blue="0.054010819137614005" alpha="1" colorSpace="calibratedRGB"/>
                                             <variation key="default">
@@ -82,7 +81,7 @@
                                                     <exclude reference="ATb-Dy-35b"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="device=watch42mm" height="40" width="101">
+                                            <variation key="device=watch42mm" height="44" width="101">
                                                 <mask key="items">
                                                     <include reference="ATb-Dy-35b"/>
                                                 </mask>
@@ -143,6 +142,7 @@
                     </variation>
                     <connections>
                         <outlet property="currentActivityBar" destination="XVa-pp-Szk" id="G9i-hW-zHH"/>
+                        <outlet property="currentActivityFiller" destination="Mqj-aK-cNk" id="EGw-aH-ma6"/>
                         <outlet property="currentActivityIcon" destination="oXM-Pp-RJX" id="Eic-H6-PNw"/>
                         <outlet property="nextActivityBar" destination="Dm9-hd-TIF" id="eh6-RE-SC7"/>
                         <outlet property="nextActivityFiller" destination="9Vh-vy-OYh" id="APc-pu-4NZ"/>

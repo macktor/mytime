@@ -16,8 +16,6 @@
 		2C61FD031CB2698B000C5D25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C61FD011CB2698B000C5D25 /* Main.storyboard */; };
 		2C61FD051CB2698B000C5D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C61FD041CB2698B000C5D25 /* Assets.xcassets */; };
 		2C61FD081CB2698B000C5D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C61FD061CB2698B000C5D25 /* LaunchScreen.storyboard */; };
-		2C61FD131CB2698B000C5D25 /* myTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61FD121CB2698B000C5D25 /* myTimeTests.swift */; };
-		2C61FD1E1CB2698B000C5D25 /* myTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61FD1D1CB2698B000C5D25 /* myTimeUITests.swift */; };
 		2C61FD311CB269A9000C5D25 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C61FD2F1CB269A9000C5D25 /* Interface.storyboard */; };
 		2C61FD331CB269A9000C5D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C61FD321CB269A9000C5D25 /* Assets.xcassets */; };
 		2C61FD3A1CB269A9000C5D25 /* watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2C61FD391CB269A9000C5D25 /* watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -34,20 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2C61FD0F1CB2698B000C5D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C61FCF21CB2698B000C5D25 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2C61FCF91CB2698B000C5D25;
-			remoteInfo = myTime;
-		};
-		2C61FD1A1CB2698B000C5D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C61FCF21CB2698B000C5D25 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2C61FCF91CB2698B000C5D25;
-			remoteInfo = myTime;
-		};
 		2C61FD3B1CB269A9000C5D25 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2C61FCF21CB2698B000C5D25 /* Project object */;
@@ -101,12 +85,6 @@
 		2C61FD041CB2698B000C5D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C61FD071CB2698B000C5D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C61FD091CB2698B000C5D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C61FD0E1CB2698B000C5D25 /* myTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C61FD121CB2698B000C5D25 /* myTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTimeTests.swift; sourceTree = "<group>"; };
-		2C61FD141CB2698B000C5D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C61FD191CB2698B000C5D25 /* myTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C61FD1D1CB2698B000C5D25 /* myTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTimeUITests.swift; sourceTree = "<group>"; };
-		2C61FD1F1CB2698B000C5D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C61FD2D1CB269A9000C5D25 /* watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C61FD301CB269A9000C5D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		2C61FD321CB269A9000C5D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,20 +111,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C61FD0B1CB2698B000C5D25 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C61FD161CB2698B000C5D25 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2C61FD361CB269A9000C5D25 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,8 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				2C61FCFC1CB2698B000C5D25 /* myTime */,
-				2C61FD111CB2698B000C5D25 /* myTimeTests */,
-				2C61FD1C1CB2698B000C5D25 /* myTimeUITests */,
 				2C61FD2E1CB269A9000C5D25 /* watch */,
 				2C61FD3D1CB269A9000C5D25 /* watch Extension */,
 				2C61FCFB1CB2698B000C5D25 /* Products */,
@@ -173,8 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				2C61FCFA1CB2698B000C5D25 /* myTime.app */,
-				2C61FD0E1CB2698B000C5D25 /* myTimeTests.xctest */,
-				2C61FD191CB2698B000C5D25 /* myTimeUITests.xctest */,
 				2C61FD2D1CB269A9000C5D25 /* watch.app */,
 				2C61FD391CB269A9000C5D25 /* watch Extension.appex */,
 			);
@@ -195,24 +155,6 @@
 				2C5EE4311CB7A4FF00E19A52 /* location.swift */,
 			);
 			path = myTime;
-			sourceTree = "<group>";
-		};
-		2C61FD111CB2698B000C5D25 /* myTimeTests */ = {
-			isa = PBXGroup;
-			children = (
-				2C61FD121CB2698B000C5D25 /* myTimeTests.swift */,
-				2C61FD141CB2698B000C5D25 /* Info.plist */,
-			);
-			path = myTimeTests;
-			sourceTree = "<group>";
-		};
-		2C61FD1C1CB2698B000C5D25 /* myTimeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2C61FD1D1CB2698B000C5D25 /* myTimeUITests.swift */,
-				2C61FD1F1CB2698B000C5D25 /* Info.plist */,
-			);
-			path = myTimeUITests;
 			sourceTree = "<group>";
 		};
 		2C61FD2E1CB269A9000C5D25 /* watch */ = {
@@ -274,42 +216,6 @@
 			productReference = 2C61FCFA1CB2698B000C5D25 /* myTime.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2C61FD0D1CB2698B000C5D25 /* myTimeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2C61FD251CB2698C000C5D25 /* Build configuration list for PBXNativeTarget "myTimeTests" */;
-			buildPhases = (
-				2C61FD0A1CB2698B000C5D25 /* Sources */,
-				2C61FD0B1CB2698B000C5D25 /* Frameworks */,
-				2C61FD0C1CB2698B000C5D25 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2C61FD101CB2698B000C5D25 /* PBXTargetDependency */,
-			);
-			name = myTimeTests;
-			productName = myTimeTests;
-			productReference = 2C61FD0E1CB2698B000C5D25 /* myTimeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2C61FD181CB2698B000C5D25 /* myTimeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2C61FD281CB2698C000C5D25 /* Build configuration list for PBXNativeTarget "myTimeUITests" */;
-			buildPhases = (
-				2C61FD151CB2698B000C5D25 /* Sources */,
-				2C61FD161CB2698B000C5D25 /* Frameworks */,
-				2C61FD171CB2698B000C5D25 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2C61FD1B1CB2698B000C5D25 /* PBXTargetDependency */,
-			);
-			name = myTimeUITests;
-			productName = myTimeUITests;
-			productReference = 2C61FD191CB2698B000C5D25 /* myTimeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		2C61FD2C1CB269A9000C5D25 /* watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C61FD501CB269A9000C5D25 /* Build configuration list for PBXNativeTarget "watch" */;
@@ -363,14 +269,6 @@
 							};
 						};
 					};
-					2C61FD0D1CB2698B000C5D25 = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 2C61FCF91CB2698B000C5D25;
-					};
-					2C61FD181CB2698B000C5D25 = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 2C61FCF91CB2698B000C5D25;
-					};
 					2C61FD2C1CB269A9000C5D25 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = LH33Y8MXN6;
@@ -395,8 +293,6 @@
 			projectRoot = "";
 			targets = (
 				2C61FCF91CB2698B000C5D25 /* myTime */,
-				2C61FD0D1CB2698B000C5D25 /* myTimeTests */,
-				2C61FD181CB2698B000C5D25 /* myTimeUITests */,
 				2C61FD2C1CB269A9000C5D25 /* watch */,
 				2C61FD381CB269A9000C5D25 /* watch Extension */,
 			);
@@ -411,20 +307,6 @@
 				2C61FD081CB2698B000C5D25 /* LaunchScreen.storyboard in Resources */,
 				2C61FD051CB2698B000C5D25 /* Assets.xcassets in Resources */,
 				2C61FD031CB2698B000C5D25 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C61FD0C1CB2698B000C5D25 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C61FD171CB2698B000C5D25 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,22 +347,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C61FD0A1CB2698B000C5D25 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2C61FD131CB2698B000C5D25 /* myTimeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C61FD151CB2698B000C5D25 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2C61FD1E1CB2698B000C5D25 /* myTimeUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2C61FD351CB269A9000C5D25 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -495,16 +361,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2C61FD101CB2698B000C5D25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2C61FCF91CB2698B000C5D25 /* myTime */;
-			targetProxy = 2C61FD0F1CB2698B000C5D25 /* PBXContainerItemProxy */;
-		};
-		2C61FD1B1CB2698B000C5D25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2C61FCF91CB2698B000C5D25 /* myTime */;
-			targetProxy = 2C61FD1A1CB2698B000C5D25 /* PBXContainerItemProxy */;
-		};
 		2C61FD3C1CB269A9000C5D25 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2C61FD381CB269A9000C5D25 /* watch Extension */;
@@ -656,52 +512,6 @@
 			};
 			name = Release;
 		};
-		2C61FD261CB2698C000C5D25 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = myTimeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.marcus.myTimeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myTime.app/myTime";
-			};
-			name = Debug;
-		};
-		2C61FD271CB2698C000C5D25 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = myTimeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.marcus.myTimeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myTime.app/myTime";
-			};
-			name = Release;
-		};
-		2C61FD291CB2698C000C5D25 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = myTimeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.marcus.myTimeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = myTime;
-			};
-			name = Debug;
-		};
-		2C61FD2A1CB2698C000C5D25 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = myTimeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.marcus.myTimeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = myTime;
-			};
-			name = Release;
-		};
 		2C61FD4D1CB269A9000C5D25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -791,24 +601,6 @@
 			buildConfigurations = (
 				2C61FD231CB2698C000C5D25 /* Debug */,
 				2C61FD241CB2698C000C5D25 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2C61FD251CB2698C000C5D25 /* Build configuration list for PBXNativeTarget "myTimeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2C61FD261CB2698C000C5D25 /* Debug */,
-				2C61FD271CB2698C000C5D25 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2C61FD281CB2698C000C5D25 /* Build configuration list for PBXNativeTarget "myTimeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2C61FD291CB2698C000C5D25 /* Debug */,
-				2C61FD2A1CB2698C000C5D25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

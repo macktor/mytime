@@ -17,16 +17,18 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var currentActivityIcon: WKInterfaceImage!
     @IBOutlet var nextActivityIcon: WKInterfaceImage!
     @IBOutlet var nextActivityFiller: WKInterfaceGroup!
+    @IBOutlet var currentActivityFiller: WKInterfaceGroup!
 
     let times1 = [
         ["time":[0,0], "end":[8,30], "name":"Home", "type":"home"],
-        ["time":[8,30], "end":[12,00], "name":"Work", "type":"work"]
+        ["time":[8,30], "end":[12,0], "name":"Work", "type":"work"]
     ]
     let times2 = [
-        ["time":[12,0], "end":[13,00], "name":"Lunch", "type":"food"],
-        ["time":[13,0], "end":[16,00], "name":"Work", "type":"work"],
-        ["time":[16,00], "end":[17,30], "name":"Gym", "type":"gym"],
-        ["time":[17,30], "end":[24,00], "name":"Home", "type":"home"]
+        ["time":[12,0], "end":[13,0], "name":"Lunch", "type":"food"],
+        ["time":[13,0], "end":[15,30], "name":"Work", "type":"work"],
+        ["time":[15,30], "end":[16,10], "name":"Home", "type":"home"],
+        ["time":[17,0], "end":[20,30], "name":"Netlight Event", "type":"other"],
+        ["time":[17,30], "end":[24,0], "name":"Home", "type":"home"]
     ]
     let maxHeight: Float = 130.0
     let colors = [
@@ -168,20 +170,27 @@ class InterfaceController: WKInterfaceController {
         nextActivityIcon.setImageNamed(nextType+"icon.png")
         
         //Calculate length of the bar for the current activity
-        if currentTime + minuteDeltaOnScreen < currentSectionEnd {
-            currentActivityBar.setWidth(CGFloat(activityMaxLength))
-        }
-        else if currentTime + minuteDeltaOnScreen > currentSectionEnd{
-            let currentBarWidth = ((currentSectionEnd-currentTime+minuteDeltaOnScreen)*ppm)
-            if currentBarWidth < 40 { //Hide the icon if the bar is too short
-                currentActivityIcon.setAlpha(0)
-            }
-            else {
-                currentActivityIcon.setAlpha(1)
-            }
 
-            currentActivityBar.setWidth(CGFloat(currentBarWidth))
+
+        var leftSide = 0
+        var rightSide = 0
+        leftSide = min(15, Int(currentTime-currentSection))
+        rightSide = min(15, Int(currentSectionEnd-currentTime))
+        let currentBarWidth = (Float(leftSide + rightSide)*ppm)
+        let currentBarFiller = Float(15 - leftSide)
+        print("leftSide1: " + String(leftSide))
+        print("rightSide1: " + String(rightSide))
+            
+        if currentBarWidth < 40 { //Hide the icon if the bar is too short
+            currentActivityIcon.setAlpha(0)
         }
+        else {
+            currentActivityIcon.setAlpha(1)
+        }
+
+        currentActivityBar.setWidth(CGFloat(currentBarWidth))
+        currentActivityFiller.setWidth(CGFloat(currentBarFiller*ppm))
+        
         
         //Calculate the length of the bar for the next activity
         if currentTime + minuteDeltaOnScreen < nextSection {
@@ -189,17 +198,23 @@ class InterfaceController: WKInterfaceController {
             nextActivityIcon.setAlpha(0)
         }
         else if currentTime + minuteDeltaOnScreen > nextSection {
-            //print("test3")
+            var leftSide: Float = 0
+            var rightSide: Float = 0
+            var fillerWidth: Float = 0
+            if nextSectionEnd < currentTime+minuteDeltaOnScreen {
+                leftSide = min(minuteDeltaOnScreen, max(0,currentTime-nextSection))
+                rightSide = min(minuteDeltaOnScreen, max(0,nextSectionEnd-currentTime))
             
-            
-            
-            let leftSide = min(15, abs(currentTime-nextSection))
-            let rightSide = min(15, abs(nextSectionEnd-currentTime))
-            print("leftSide: " + String(leftSide))
-            print("rightSide: " + String(rightSide))
+                print("leftSide: " + String(leftSide))
+                print("rightSide: " + String(rightSide))
+                fillerWidth = (minuteDeltaOnScreen - Float(rightSide))*ppm
+            }
+            else {
+                leftSide = (minuteDeltaOnScreen - (nextSection - currentTime))
+                print("leftSide2: " + String(leftSide))
+            }
             
             let nextBarWidth = ((leftSide + rightSide)*ppm)
-            let fillerWidth = (15 - rightSide)*ppm
             print("nextBarWidth: " + String(nextBarWidth))
             print("fillerWidth: " + String(fillerWidth))
             
@@ -224,6 +239,7 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         print("willActivate")
+        setUpBar()
         timer = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: #selector(InterfaceController.setUpBar), userInfo: nil, repeats: true)
         super.willActivate()
     }
