@@ -12,6 +12,9 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
+    @IBOutlet var nextActivityTimeLabel: WKInterfaceLabel!
+    @IBOutlet var nextActivityLabel: WKInterfaceLabel!
+    @IBOutlet var currentActivityLabel: WKInterfaceLabel!
     @IBOutlet var currentActivityBar: WKInterfaceGroup!
     @IBOutlet var nextActivityBar: WKInterfaceGroup!
     @IBOutlet var currentActivityIcon: WKInterfaceImage!
@@ -25,9 +28,8 @@ class InterfaceController: WKInterfaceController {
     ]
     let times2 = [
         ["time":[12,0], "end":[13,0], "name":"Lunch", "type":"food"],
-        ["time":[13,0], "end":[15,30], "name":"Work", "type":"work"],
-        ["time":[15,30], "end":[16,10], "name":"Home", "type":"home"],
-        ["time":[17,0], "end":[20,30], "name":"Netlight Event", "type":"other"],
+        ["time":[13,0], "end":[16,30], "name":"Work", "type":"work"],
+        ["time":[16,30], "end":[17,40], "name":"Gym", "type":"gym"],
         ["time":[17,30], "end":[24,0], "name":"Home", "type":"home"]
     ]
     let maxHeight: Float = 130.0
@@ -66,9 +68,8 @@ class InterfaceController: WKInterfaceController {
     var duration: Int = 0
     
     let dayLength: Int = 24*60
-    let minuteDeltaOnScreen: Float = 15
-    let activityMaxLength: Float = 156
-    let nextActivityMaxLength: Float = 114
+    let minuteDeltaOnScreen: Float = 30 //Distance in minutes from middle of screen to edge
+    let activityMaxLength: Float = 156 //Max Length of bar on screen
     
     var currentSection: Float!
     var currentSectionEnd: Float!
@@ -100,7 +101,7 @@ class InterfaceController: WKInterfaceController {
         let minute = components.minute
         let current = hour*60 + minute //Current time in minutes from midnight
         
-        let ppm = activityMaxLength/(minuteDeltaOnScreen*2)
+        let ppm = activityMaxLength/(minuteDeltaOnScreen*2) //pixles per minute
         
         var i = 0
         
@@ -116,6 +117,7 @@ class InterfaceController: WKInterfaceController {
             print("startTime: " + String(startTime))
             print("current: " + String(current))
             print("endTime: " + String(endTime))
+            
             if startTime <= current && current < endTime { //Find the currently ongoing activity
                 let currentBlock = times[i]
                 activity = (currentBlock["name"] as! String?)!
@@ -174,10 +176,10 @@ class InterfaceController: WKInterfaceController {
 
         var leftSide = 0
         var rightSide = 0
-        leftSide = min(15, Int(currentTime-currentSection))
-        rightSide = min(15, Int(currentSectionEnd-currentTime))
+        leftSide = min(Int(minuteDeltaOnScreen), Int(currentTime-currentSection))
+        rightSide = min(Int(minuteDeltaOnScreen), Int(currentSectionEnd-currentTime))
         let currentBarWidth = (Float(leftSide + rightSide)*ppm)
-        let currentBarFiller = Float(15 - leftSide)
+        let currentBarFiller = Float(Int(minuteDeltaOnScreen) - leftSide)
         print("leftSide1: " + String(leftSide))
         print("rightSide1: " + String(rightSide))
             
@@ -190,6 +192,17 @@ class InterfaceController: WKInterfaceController {
 
         currentActivityBar.setWidth(CGFloat(currentBarWidth))
         currentActivityFiller.setWidth(CGFloat(currentBarFiller*ppm))
+        
+        currentActivityLabel.setText(activity)
+        
+        var hoursLeft = nextH - hour
+        var minutesLeft = nextM - minute
+        if minutesLeft < 0 {
+            hoursLeft = hoursLeft - 1
+            minutesLeft = 60 + minutesLeft
+        }
+        nextActivityLabel.setText(nextActivity)
+        nextActivityTimeLabel.setText(String(hoursLeft) + " h " + String(minutesLeft) + " m")
         
         
         //Calculate the length of the bar for the next activity

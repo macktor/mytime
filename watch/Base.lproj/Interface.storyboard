@@ -52,20 +52,65 @@
                                 </group>
                                 <group width="100" height="100" alignment="left" spacing="0.0" id="fH9-Sz-2MU">
                                     <items>
+                                        <group width="100" height="1" alignment="left" id="beH-Cp-EfH">
+                                            <items>
+                                                <label alignment="right" text="Label" id="wTd-RJ-fBw">
+                                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                                </label>
+                                            </items>
+                                            <edgeInsets key="margins" left="0.0" right="3" top="0.0" bottom="0.0"/>
+                                            <variation key="default">
+                                                <mask key="items">
+                                                    <exclude reference="wTd-RJ-fBw"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="device=watch42mm" width="77">
+                                                <mask key="items">
+                                                    <include reference="wTd-RJ-fBw"/>
+                                                </mask>
+                                            </variation>
+                                        </group>
                                         <group width="100" height="1" alignment="center" verticalAlignment="center" id="Cy0-5e-oUD">
                                             <color key="backgroundColor" red="1" green="0.9489566231142802" blue="0.99909756526044236" alpha="1" colorSpace="calibratedRGB"/>
                                             <variation key="device=watch42mm" width="2"/>
+                                        </group>
+                                        <group width="77" height="1" alignment="right" layout="vertical" spacing="0.0" id="Qf7-Rq-loG">
+                                            <items>
+                                                <label alignment="left" text="Lunch" textAlignment="left" numberOfLines="2" id="T1T-6o-1K9">
+                                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                                </label>
+                                                <label alignment="left" verticalAlignment="bottom" text="3 H 19 M" id="IaT-lD-1RC">
+                                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                                </label>
+                                            </items>
+                                            <edgeInsets key="margins" left="3" right="0.0" top="0.0" bottom="0.0"/>
+                                            <variation key="default">
+                                                <mask key="items">
+                                                    <exclude reference="T1T-6o-1K9"/>
+                                                    <exclude reference="IaT-lD-1RC"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="device=watch42mm">
+                                                <mask key="items">
+                                                    <include reference="T1T-6o-1K9"/>
+                                                    <include reference="IaT-lD-1RC"/>
+                                                </mask>
+                                            </variation>
                                         </group>
                                     </items>
                                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                     <variation key="default">
                                         <mask key="items">
+                                            <exclude reference="beH-Cp-EfH"/>
                                             <exclude reference="Cy0-5e-oUD"/>
+                                            <exclude reference="Qf7-Rq-loG"/>
                                         </mask>
                                     </variation>
                                     <variation key="device=watch42mm" height="30" width="156">
                                         <mask key="items">
+                                            <include reference="beH-Cp-EfH"/>
                                             <include reference="Cy0-5e-oUD"/>
+                                            <include reference="Qf7-Rq-loG"/>
                                         </mask>
                                     </variation>
                                 </group>
@@ -144,9 +189,12 @@
                         <outlet property="currentActivityBar" destination="XVa-pp-Szk" id="G9i-hW-zHH"/>
                         <outlet property="currentActivityFiller" destination="Mqj-aK-cNk" id="EGw-aH-ma6"/>
                         <outlet property="currentActivityIcon" destination="oXM-Pp-RJX" id="Eic-H6-PNw"/>
+                        <outlet property="currentActivityLabel" destination="wTd-RJ-fBw" id="KyE-z0-tf0"/>
                         <outlet property="nextActivityBar" destination="Dm9-hd-TIF" id="eh6-RE-SC7"/>
                         <outlet property="nextActivityFiller" destination="9Vh-vy-OYh" id="APc-pu-4NZ"/>
                         <outlet property="nextActivityIcon" destination="ATb-Dy-35b" id="e6c-Dr-0aY"/>
+                        <outlet property="nextActivityLabel" destination="T1T-6o-1K9" id="IBm-S8-78b"/>
+                        <outlet property="nextActivityTimeLabel" destination="IaT-lD-1RC" id="R3O-2k-WaB"/>
                     </connections>
                 </controller>
             </objects>
