@@ -189,9 +189,10 @@ class InterfaceController: WKInterfaceController {
         else {
             currentActivityIcon.setAlpha(1)
         }
-
-        currentActivityBar.setWidth(CGFloat(currentBarWidth))
-        currentActivityFiller.setWidth(CGFloat(currentBarFiller*ppm))
+        animateWithDuration(2){
+            self.currentActivityBar.setWidth(CGFloat(currentBarWidth))
+            self.currentActivityFiller.setWidth(CGFloat(currentBarFiller*ppm))
+        }
         
         currentActivityLabel.setText(activity)
         
@@ -207,7 +208,9 @@ class InterfaceController: WKInterfaceController {
         
         //Calculate the length of the bar for the next activity
         if currentTime + minuteDeltaOnScreen < nextSection {
-            nextActivityBar.setWidth(0)
+            animateWithDuration(1){
+                self.nextActivityBar.setWidth(0)
+            }
             nextActivityIcon.setAlpha(0)
         }
         else if currentTime + minuteDeltaOnScreen > nextSection {
@@ -238,8 +241,10 @@ class InterfaceController: WKInterfaceController {
             else {
                 nextActivityIcon.setAlpha(1)
             }
-            nextActivityBar.setWidth(CGFloat(nextBarWidth))
-            nextActivityFiller.setWidth(CGFloat(fillerWidth))
+            animateWithDuration(2){
+                self.nextActivityBar.setWidth(CGFloat(nextBarWidth))
+                self.nextActivityFiller.setWidth(CGFloat(fillerWidth))
+            }
         }
         currentActivityBar.setBackgroundColor(barColor)
         nextActivityBar.setBackgroundColor(nextColor)
@@ -253,7 +258,7 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         print("willActivate")
         setUpBar()
-        timer = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: #selector(InterfaceController.setUpBar), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: #selector(InterfaceController.setUpBar), userInfo: nil, repeats: true)
         super.willActivate()
     }
 
